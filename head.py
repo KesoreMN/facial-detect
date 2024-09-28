@@ -56,20 +56,21 @@ while cap.isOpened():
             y=angles[1]*360
             z=angles[2]*360
 
-            if y< -6 and x>0:
-                text="looking left"
+            
+            if y< -6 and x>-1:
+                text="left"
                 if y<-6 and x>=7 :
-                    text="looking left up "
-            elif y> 4 and x<5 :
-                text="looking right"
-            elif y>4 and x>5 :
-                text="right up"
-            elif x<=-1 and y>-2 :
-                text="looking down"
-            elif x<0 and y<-2:
+                    text="left up "
+            elif x<-1 and y<-2:
                 text="left down"
-            elif y>4 and  x<-5:
+            elif y> 4 and x>0 :
+                text="right"
+                if y>4 and x>5 :
+                    text="right up"
+            elif y>12 and  x<-1:
                 text="right down"
+            elif x<=0 and y>-4 :
+                text="down" 
             elif x> 8:
                 text= "up"
             else:
