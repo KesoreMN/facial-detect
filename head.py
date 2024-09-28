@@ -56,19 +56,25 @@ while cap.isOpened():
             y=angles[1]*360
             z=angles[2]*360
 
-            if y< -6 :
+            if y< -6 and x>0:
                 text="looking left"
-            elif y> 8.5:
+                if y<-6 and x>=7 :
+                    text="looking left up "
+            elif y> 4 and x<5 :
                 text="looking right"
-
-            elif y>10 :
+            elif y>4 and x>5 :
                 text="right up"
-            elif x< -10:
+            elif x<=-1 and y>-2 :
                 text="looking down"
-            elif x> 10:
+            elif x<0 and y<-2:
+                text="left down"
+            elif y>4 and  x<-5:
+                text="right down"
+            elif x> 8:
                 text= "up"
             else:
                 text="forward"
+
 
             nose_3d_projection,jacobian=cv.projectPoints(nose_3d,rot_vec,trans_vec,cam_matrix,dist_matrix)
 
